@@ -2,7 +2,7 @@
 
 <h1><%= plural_table_name.titleize %></h1>
 
-<table class="table table-responsive">
+<table class="w3-table-all">
   <thead>
     <tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
@@ -18,9 +18,9 @@
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
         <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
 <% end -%>
-        <td><%%= link_to 'Show', <%= singular_table_name %> , class:"btn btn-xs btn-danger" %></td>
-        <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) , class:"btn btn-xs btn-danger" %></td>
-        <td><%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-xs btn-danger" %></td>
+        <td><%%= link_to 'Show', <%= singular_table_name %> , class:"w3-button w3-hover-purple" %></td>
+        <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) , class:"w3-button w3-hover-purple" %></td>
+        <td><%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } , class:"w3-button w3-hover-purple" %></td>
       </tr>
     <%% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_table_name %>_path , class:"btn btn-xs btn-danger" %>
+<%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_table_name %>_path , class:"w3-button w3-hover-purple" %>

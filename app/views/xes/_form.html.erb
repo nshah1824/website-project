@@ -1,0 +1,22 @@
+<%= form_for(x) do |f| %>
+  <% if x.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(x.errors.count, "error") %> prohibited this x from being saved:</h2>
+
+      <ul>
+      <% x.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="w3-panel">
+    <%= f.label :name %>
+    <%= f.text_field :name , class:"w3-input w3-border" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :create, class:"w3-button w3-light-blue"%>
+  </div>
+<% end %>

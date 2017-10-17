@@ -12,23 +12,23 @@
   <%% end %>
 
 <% attributes.each do |attribute| -%>
-  <div class="form-group">
+  <div class="w3-panel">
 <% if attribute.password_digest? -%>
     <%%= f.label :password %>
-    <%%= f.password_field :password , class:"form-control" %>
+    <%%= f.password_field :password , class:"w3-input w3-border" %>
   </div>
 
-  <div class="form-group">
+  <div>
     <%%= f.label :password_confirmation %>
-    <%%= f.password_field :password_confirmation , class:"form-control" %>
+    <%%= f.password_field :password_confirmation , class:"w3-input w3-border" %>
 <% else -%>
     <%%= f.label :<%= attribute.column_name %> %>
-    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %> , class:"form-control" %>
+    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %> , class:"w3-input w3-border" %>
 <% end -%>
   </div>
 
 <% end -%>
   <div class="actions">
-    <%%= f.submit :create, class:"btn btn-default"%>
+    <%%= f.submit :create, class:"w3-button w3-light-blue"%>
   </div>
 <%% end %>
