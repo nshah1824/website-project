@@ -1,2 +1,0 @@
-class Typo < ApplicationRecord
-end
