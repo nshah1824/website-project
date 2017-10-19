@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<div class="w3-panel w3-pale-green w3-border w3-round-small">
+
+<div>product</div>
+
+<div>
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p>
+
+
+<p>
+  <strong>Description:</strong>
+  <%= strip_tags(@product.description) %>
+</p>
+
+
+<p>
+  <strong>Image url:</strong>
+  <%= image_tag(@product.image_url) %>
+</p>
+
+
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency(@product.price) %>
+</p>
+
+
+</div>
+
+<div>
+
+<%= link_to 'Edit', edit_product_path(@product) ,class:"w3-button w3-hover-pale-green" %> |
+<%= link_to 'Back', products_path , class:"w3-button w3-hover-pale-green" %>
+
+</div></div>

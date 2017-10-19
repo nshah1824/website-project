@@ -1,6 +1,6 @@
 <%%= form_for(<%= singular_table_name %>) do |f| %>
   <%% if <%= singular_table_name %>.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class= "w3-panel">
       <h2><%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
 
       <ul>
