@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :line_items
+  resources :carts
+  get 'store/index'
+
   resources :products
   get 'static_pages/home'
 
@@ -7,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/about'
 
-  root 'products#index'
+root 'store#index'
+  #root 'products#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
