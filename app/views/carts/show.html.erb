@@ -22,8 +22,7 @@
 <div>
 
 
-<%= link_to 'Edit', edit_cart_path(@cart) ,class:"w3-button w3-hover-purple" %> |
-<%= link_to 'Back', carts_path , class:"w3-button w3-hover-purple" %>
+
 <%= link_to 'Keep Shopping', store_index_url , class:"w3-button w3-hover-purple" %>
 <%= button_to 'Empty cart', @cart, class:"w3-button w3-hover-purple",  method: :delete, data: { confirm: 'Are you sure?' } %>
 </div></div>
