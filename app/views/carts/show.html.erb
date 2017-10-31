@@ -4,20 +4,26 @@
 
 <div>cart</div>
 
-<div>
-<ul>
-	  <% @cart.line_items.each do |item| %>
-	    <li><%= item.product.title %></li>
-	    <li><%= number_to_currency(item.product.price) %></li>
-	    <li> <%= image_tag(item.product.image_url) %></li>
-	  <% end %>
-	</ul>
-
+<div class= "panel-body">
+ <table class="table table-responsive">	
+	   <% @cart.line_items.each do |item| %>
+    <tr><td><%= item.quantity %> &times; </td>
+	<td><%= item.product.title %></td>
+	<td><%= number_to_currency(item.total_price) %></td>
+	<td><%= image_tag(item.product.image_url)%></td>
+    </tr>
+    <% end %>
+    <tr>
+    <td>Total Order Value</td><td><%= number_to_currency(@cart.total_price) %></td>
+    </tr>
+ </table>
 </div>
 
 <div>
 
-<%= link_to 'Edit', edit_cart_path(@cart) ,class:"w3-button w3-hover-pale-green" %> |
-<%= link_to 'Back', carts_path , class:"w3-button w3-hover-pale-green" %>
 
+<%= link_to 'Edit', edit_cart_path(@cart) ,class:"w3-button w3-hover-purple" %> |
+<%= link_to 'Back', carts_path , class:"w3-button w3-hover-purple" %>
+<%= link_to 'Keep Shopping', store_index_url , class:"w3-button w3-hover-purple" %>
+<%= button_to 'Empty cart', @cart, class:"w3-button w3-hover-purple",  method: :delete, data: { confirm: 'Are you sure?' } %>
 </div></div>
