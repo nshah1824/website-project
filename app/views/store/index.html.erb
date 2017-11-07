@@ -21,7 +21,6 @@
         <td><%= image_tag(product.image_url) %></td>
         <td><%= number_to_currency(product.price) %></td>
         <td> <%= button_to 'Add to Cart', line_items_path(product_id: product) %></td>
-        <td><%= link_to 'Show', product , class:"w3-button w3-white w3-border w3-border-blue w3-hover-indigo" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +28,3 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path , class:"w3-button w3-white w3-border w3-border-blue" %>
