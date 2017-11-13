@@ -1,9 +1,12 @@
 class LineItemsController < ApplicationController
+  # skip_before_action :authorize, only: :create
+  skip_before_action :authorize, only: [:index, :show, :new, :create]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   
   include CurrentCart
 	before_action :set_cart, only: [:create]
-
+  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  
   # GET /line_items
   # GET /line_items.json
   def index

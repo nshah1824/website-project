@@ -11,16 +11,22 @@
   <body class= "w3-container">
     <div class="w3-bar w3-blue">
       <a href="/static_pages/home" class="w3-button w3-hover-purple">Home</a> 
-      <a href="/products" class="w3-button w3-hover-purple">Products</a>
       <a href="/static_pages/help" class="w3-button w3-hover-purple">Help</a>
       <a href="/static_pages/about" class="w3-button w3-hover-purple">About</a>
       <a href= "/" class="w3-button w3-hover-purple">Store</a>
-      <a href= "/carts" class="w3-button w3-hover-purple"> Shopping Cart </a>
-      <a href= "/line_items" class="w3-button w3-hover-purple"> Line Items </a>
+      <a href= "/login" class="w3-button w3-hover-purple"> Login </a>
+      <% if session[:user_id] %>
+  <%= link_to 'Orders', orders_path, class:"w3-button w3-hover-purple" %>
+  <%= link_to 'Products', products_path, class:"w3-button w3-hover-purple" %>
+  <a href= "/carts" class="w3-button w3-hover-purple"> Shopping Cart </a>
+  <a href= "/line_items" class="w3-button w3-hover-purple"> Line Items </a>
+  <%= link_to 'Users', users_path, class:"w3-button w3-hover-purple" %>
+  <%= link_to 'Logout', logout_path, method: :delete, class:"w3-button w3-hover-purple" %>
+<% end %>
     </div>
+    
     <div>
     <%= yield %>
-    
     </div>
   </body>
 </html>

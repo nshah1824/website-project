@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="w3-panel w3-pale-green w3-border w3-round-small">
+
+<div>user</div>
+
+<div>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+
+</div>
+
+<div>
+
+<%= link_to 'Edit', edit_user_path(@user) ,class:"w3-button w3-hover-pale-green" %> |
+<%= link_to 'Back', users_path , class:"w3-button w3-hover-pale-green" %>
+
+</div></div>
