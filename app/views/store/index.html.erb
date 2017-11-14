@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
-
+<%= link_to "View Your Current Cart", cart_path(current_cart), :class => 'w3-button w3-border w3-border-blue w3-round w3-hover-purple'%>
 <table class="w3-table-all">
   <thead>
-    <tr>
+    <tr class= "w3-cyan">
       <th>Title</th>
       <th>Description</th>
       <th>Image url</th>

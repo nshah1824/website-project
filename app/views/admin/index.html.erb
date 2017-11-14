@@ -1,3 +1,9 @@
-<h1>Welcome</h1>
-It's <%= Time.now.in_time_zone("Central Time (US & Canada)") %>
-We have <%= pluralize(@total_orders, "order") %>.
+<div class= "w3-panel w3-cyan w3-round-large w3-center">
+    <h1>Welcome to the Admin Index Page</h1> 
+</div>
+
+<div class="w3-panel w3-pale-green">
+<p>It's <%= Time.now.in_time_zone("Central Time (US & Canada)") %></p>
+<p>We have <%= pluralize(@total_orders, "order") %></p>
+<a href="/orders" class="w3-button w3-border w3-border-blue w3-round w3-hover-purple">View Orders</a>
+</div>
